@@ -102,6 +102,38 @@ export default new Router({
 
 export const asyncRouterMap = [
   {
+    path: '/products',
+    component: Layout,
+    redirect: '/products/list',
+    name: 'products',
+    meta: {
+      title: '产品列表',
+      icon: 'shoppingCard'
+    },
+    children: [
+      {
+        path: 'create',
+        component: () => import('@/views/product/create'),
+        name: 'createProduct',
+        meta: { title: '新增产品', icon: 'edit' }
+      },
+      {
+        path: 'edit/:id(\\d+)',
+        component: () => import('@/views/product/edit'),
+        name: 'editProduct',
+        meta: { title: '更新产品', noCache: true },
+        hidden: true
+      },
+      {
+        path: 'list',
+        component: () => import('@/views/product/list'),
+        name: 'productList',
+        meta: { title: '产品列表', icon: 'list' }
+      }
+    ]
+  },
+
+  {
     path: '/permission',
     component: Layout,
     redirect: '/permission/index',
