@@ -7,10 +7,10 @@ Vue.use(Router)
 import Layout from '@/views/layout/Layout'
 
 /* Router Modules */
-import componentsRouter from './modules/components'
-import chartsRouter from './modules/charts'
-import tableRouter from './modules/table'
-import nestedRouter from './modules/nested'
+// import componentsRouter from './modules/components'
+// import chartsRouter from './modules/charts'
+// import tableRouter from './modules/table'
+// import nestedRouter from './modules/nested'
 
 /** note: submenu only apppear when children.length>=1
  *  detail see  https://panjiachen.github.io/vue-element-admin-site/guide/essentials/router-and-nav.html
@@ -66,6 +66,7 @@ export const constantRouterMap = [
   },
   {
     path: '/documentation',
+    hidden: true,
     component: Layout,
     redirect: '/documentation/index',
     children: [
@@ -79,6 +80,7 @@ export const constantRouterMap = [
   },
   {
     path: '/guide',
+    hidden: true,
     component: Layout,
     redirect: '/guide/index',
     children: [
@@ -133,6 +135,7 @@ export const asyncRouterMap = [
 
   {
     path: '/icon',
+    hidden: true,
     component: Layout,
     children: [
       {
@@ -145,10 +148,10 @@ export const asyncRouterMap = [
   },
 
   /** When your routing table is too long, you can split it into small modules**/
-  componentsRouter,
-  chartsRouter,
-  nestedRouter,
-  tableRouter,
+  // componentsRouter,
+  // chartsRouter,
+  // nestedRouter,
+  // tableRouter,
 
   {
     path: '/example',
@@ -236,6 +239,7 @@ export const asyncRouterMap = [
 
   {
     path: '/excel',
+    hidden: true,
     component: Layout,
     redirect: '/excel/export-excel',
     name: 'excel',
@@ -267,6 +271,7 @@ export const asyncRouterMap = [
 
   {
     path: '/zip',
+    hidden: true,
     component: Layout,
     redirect: '/zip/download',
     alwaysShow: true,
@@ -283,6 +288,7 @@ export const asyncRouterMap = [
 
   {
     path: '/theme',
+    hidden: true,
     component: Layout,
     redirect: 'noredirect',
     children: [
@@ -297,6 +303,7 @@ export const asyncRouterMap = [
 
   {
     path: '/clipboard',
+    hidden: true,
     component: Layout,
     redirect: 'noredirect',
     children: [
@@ -311,6 +318,7 @@ export const asyncRouterMap = [
 
   {
     path: '/i18n',
+    hidden: true,
     component: Layout,
     children: [
       {
